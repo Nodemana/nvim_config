@@ -29,6 +29,9 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "pyright",        -- for Python
+                "tsserver",       -- for JavaScript
+                "clangd",         -- for C++
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -67,6 +70,40 @@ return {
                         }
                     }
                 end,
+               ["pyright"] = function()
+                    require("lspconfig").pyright.setup {
+                    capabilities = capabilities,
+                    settings = {
+                        python = {
+                            analysis = {
+                                autoSearchPaths = true,
+                                diagnosticMode = "workspace",
+                                useLibraryCodeForTypes = true
+                            }
+                        }
+                    }
+                }
+            end,
+
+            ["tsserver"] = function()
+                require("lspconfig").tsserver.setup {
+                    capabilities = capabilities,
+                    -- Add any specific settings for tsserver if needed
+                }
+            end,
+
+            ["clangd"] = function()
+                require("lspconfig").clangd.setup {
+                    capabilities = capabilities,
+                    cmd = {
+                        "clangd",
+                        "--background-index",
+                        "--suggest-missing-includes",
+                        "--clang-tidy",
+                        "--header-insertion=iwyu",
+                    },
+                }
+            end,
             }
         })
 
