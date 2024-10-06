@@ -2,6 +2,7 @@ require("zachedwards.set")
 require("zachedwards.remap")
 require("zachedwards.lazy_init")
 
+local secrets = require("zachedwards.secrets")
 -- DO.not
 -- DO NOT INCLUDE THIS
 
@@ -47,7 +48,7 @@ autocmd({"BufWritePre"}, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
-vim.env.OPENAI_API_KEY = "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"
+vim.env.OPENAI_API_KEY = secrets.OPENAI_API_KEY
 autocmd('LspAttach', {
     group = ZachGroup,
     callback = function(e)
