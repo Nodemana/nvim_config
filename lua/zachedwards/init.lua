@@ -49,6 +49,7 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 vim.env.OPENAI_API_KEY = secrets.OPENAI_API_KEY
+vim.env.ANTHROPIC_API_KEY = secrets.ANTHROPIC_API_KEY
 autocmd('LspAttach', {
     group = ZachGroup,
     callback = function(e)

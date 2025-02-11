@@ -127,3 +127,5 @@ vim.keymap.set("n", "<leader>co", ":ChatGPTRun optimize_code<CR>", { desc = "Opt
 vim.keymap.set("n", "<leader>cs", ":ChatGPTRun summarize<CR>", { desc = "Summarize" })
 vim.keymap.set("n", "<leader>cf", ":ChatGPTRun fix_bugs<CR>", { desc = "Fix Bugs" })
 vim.keymap.set("n", "<leader>cx", ":ChatGPTRun explain_code<CR>", { desc = "Explain Code" })
+
+
