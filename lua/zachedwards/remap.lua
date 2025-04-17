@@ -33,7 +33,8 @@ end)
 
 -- Paste over selection without copying replaced text
 vim.keymap.set("x", "<leader>p", [["_dP]])
-
+vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 -- Copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])

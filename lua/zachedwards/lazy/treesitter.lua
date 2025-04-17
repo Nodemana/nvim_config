@@ -6,7 +6,7 @@ return {
             -- A list of parser names, or "all"
             ensure_installed = {
                 "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash", "python", "markdown", "markdown_inline"
+                "jsdoc", "bash", "python"
             },
            -- ensure_installed = {
             --    "python",
